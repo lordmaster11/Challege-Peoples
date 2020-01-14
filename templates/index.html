@@ -2,45 +2,46 @@
 
 {% block content %}
 <div>
-        <div class="card card-body">
-                <form action="/" method="POST" class="text-center">
-                        <div class="form-group">
-                                <input type="text" name="first_name" placeholder="Nombre" class="form-control">
-                        </div>
-                        <div class="form-group">
-                                <input type="text" name="last_name" placeholder="Apellido" class="form-control">
-                        </div>
-                        <div class="form-group">
-                                <input type="text" name="email" placeholder="Email" class="form-control">
-                        </div>
+        <div class="col-md-4 offset-md-4">
+                <div class="card card-body">
+                        <p class="text-center"><b>Ingresar Alumno</b></p>
+                        <form action="/" method="POST" class="text-center">
+                                <div class="form-group">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" name="first_name" placeholder="Nombre" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" name="last_name" placeholder="Apellido" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="text" name="email" placeholder="Email" class="form-control">
+                                </div>
 
-        <!--
-        {% for course in courses %}
-        <input type="checkbox" name="course|join({{loop.index}}+1|string)" value={{course['id']}}>{{course['name']}}
-        {% endfor %}
-        -->
-
-                        <div class="form-group">
-                                <input type="checkbox" name="course" value={{courses[0]['id']}}>{{courses[0]['name']}}
-                                <input type="checkbox" name="course" value={{courses[1]['id']}}>{{courses[1]['name']}}
-                                <input type="checkbox" name="course" value={{courses[2]['id']}}>{{courses[2]['name']}}
-                        </div>
-
-                        <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-                        </div>
-                </form>
+                                <p><b>Seleccionar Curso</b></p>
+                                <div>
+                                        <div class="checkboxes">
+                                        <label for="x"><input type="checkbox" name="course" value={{courses[0]['id']}} id="x"><span>{{courses[0]['name']}}</span></label>
+                                        <label for="y"><input type="checkbox" name="course" value={{courses[1]['id']}} id="y"><span>{{courses[1]['name']}}</span></label>
+                                        <label for="z"><input type="checkbox" name="course" value={{courses[2]['id']}} id="z"><span>{{courses[2]['name']}}</span></label>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                                </div>
+                        </form>
+                </div>
         </div>
 
         <div class="container">
-                <H4 class="text-center">Alumnos</H4>
                 <br>
                 <div class="table-responsive">
                         <table class="table table-hover table-bordered table table-striped table-dark">
                                 <thead>
-                                        <td>Nombre</td>
-                                        <td>Apellido</td>
-                                        <td>Email</td>
+                                        <td><b>Nombre</b></td>
+                                        <td><b>Apellido</b></td>
+                                        <td><b>Email</b></td>
                                         <td> </td>
                                 </thead>
                                 <tbody>
@@ -48,11 +49,12 @@
                                         <tr>
                                                 <td>{{people['first_name']}}</td>
                                                 <td>{{people['last_name']}}</td>
-                                                <td><B>{{people['email']}}</B></td>
+                                                <td>{{people['email']}}</td>
                                                 <td>
+                                                        <div class="form-group text-center">
                                                         <a href="/edit/{{people['id']}}" class="btn btn-info">Editar</a>
-                                                        <a href="/delete/{{people['id']}}"
-                                                                class="btn btn-danger">Eliminar</a>
+                                                        <a href="/delete/{{people['id']}}" class="btn btn-danger">Eliminar</a>
+                                                        <div>
                                                 </td>
                                         </tr>
                                         {% endfor %}
