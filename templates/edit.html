@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<H2 class="text-center">Editar un Alumno</H2><br>
+
+<form action="/update/{{people['id']}}" method="POST" class="text-center">
+        <input type="text" name="first_name" placeholder="Nombre" value={{people['first_name']}}>
+        <input type="text" name="last_name" placeholder="Apellido" value={{people['last_name']}}>
+        <input type="text" name="email" placeholder="email" value={{people['email']}}>
+        <br>
+
+        <h1>{{people['courses']}}</h1>
+        <input type="checkbox" name="course" value={{courses[0]['id']}}>{{courses[0]['name']}}
+        <input type="checkbox" name="course" value={{courses[1]['id']}}>{{courses[1]['name']}}
+        <input type="checkbox" name="course" value={{courses[2]['id']}}>{{courses[2]['name']}}
+
+        <br>
+
+        <button type="submit">Editar</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personas</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <ul class="navbar-nav">
+      <li>Alumnos de Inglés</li>
+    </ul>
+  </nav>
+  <br>
+
+  {% block content %}
+  {% endblock content %}
+
+  <br>
+  <footer class="page-footer font-small cyan darken-3">
+    <div class="container-footer">
+      <div class="text-center">
+        <!-- Facebook -->
+        <a class="fb-ic" href="https://es-la.facebook.com/trinomiosrl/" target="_blank">
+          <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <!--Instagram-->
+        <a class="ins-ic" href="https://www.instagram.com/mercadolibre.arg/?hl=es-la" target="_blank">
+          <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+        <!--Linkedin -->
+        <a class="li-ic" href="https://ar.linkedin.com/company/mercadolibre" target="_blank">
+          <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+        </a>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright © 1999-2020:
+      <a href="http://jdicostanzo.challenge.trinom.io/" target="_blank"> Trinomio S.A</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>
