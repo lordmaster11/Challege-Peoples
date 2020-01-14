@@ -1,13 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
-<H2 class="text-center">Ingrese un nuevo Alumno</H2><br>
-<form action="/" method="POST" class="text-center">
-        <input type="text" name="first_name" placeholder="Nombre">
-        <input type="text" name="last_name" placeholder="Apellido">
-        <input type="text" name="email" placeholder="Email">
-        <br>
+<div>
+        <div class="card card-body">
+                <form action="/" method="POST" class="text-center">
+                        <div class="form-group">
+                                <input type="text" name="first_name" placeholder="Nombre" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="last_name" placeholder="Apellido" class="form-control">
+                        </div>
+                        <div class="form-group">
+                                <input type="text" name="email" placeholder="Email" class="form-control">
+                        </div>
 
         <!--
         {% for course in courses %}
@@ -15,41 +20,45 @@
         {% endfor %}
         -->
 
-        <input type="checkbox" name="course" value={{courses[0]['id']}}>{{courses[0]['name']}}
-        <input type="checkbox" name="course" value={{courses[1]['id']}}>{{courses[1]['name']}}
-        <input type="checkbox" name="course" value={{courses[2]['id']}}>{{courses[2]['name']}}
+                        <div class="form-group">
+                                <input type="checkbox" name="course" value={{courses[0]['id']}}>{{courses[0]['name']}}
+                                <input type="checkbox" name="course" value={{courses[1]['id']}}>{{courses[1]['name']}}
+                                <input type="checkbox" name="course" value={{courses[2]['id']}}>{{courses[2]['name']}}
+                        </div>
 
-        <br>
-        <button type="submit">Guardar</button>
-</form>
+                        <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        </div>
+                </form>
+        </div>
 
-<br>
-
-<div class="container">
-        <H2 class="text-center">Alumnos</H2>
-        <br>
-        <div class="table-responsive">
-                <table class="table table-hover table-bordered table table-striped table-dark">
-                        <thead>
-                                <td>Nombre</td>
-                                <td>Apellido</td>
-                                <td>Email</td>
-                                <td> </td>
-                        </thead>
-                        <tbody>
-                                {% for people in peoples %}
-                                <tr>
-                                        <td>{{people['first_name']}}</td>
-                                        <td>{{people['last_name']}}</td>
-                                        <td><B>{{people['email']}}</B></td>
-                                        <td>
-                                                <a href="/edit/{{people['id']}}">Editar</a>
-                                                <a href="/delete/{{people['id']}}">Eliminar</a>
-                                        </td>
-                                </tr>
-                                {% endfor %}
-                        </tbody>
-                </table>
+        <div class="container">
+                <H4 class="text-center">Alumnos</H4>
+                <br>
+                <div class="table-responsive">
+                        <table class="table table-hover table-bordered table table-striped table-dark">
+                                <thead>
+                                        <td>Nombre</td>
+                                        <td>Apellido</td>
+                                        <td>Email</td>
+                                        <td> </td>
+                                </thead>
+                                <tbody>
+                                        {% for people in peoples %}
+                                        <tr>
+                                                <td>{{people['first_name']}}</td>
+                                                <td>{{people['last_name']}}</td>
+                                                <td><B>{{people['email']}}</B></td>
+                                                <td>
+                                                        <a href="/edit/{{people['id']}}" class="btn btn-info">Editar</a>
+                                                        <a href="/delete/{{people['id']}}"
+                                                                class="btn btn-danger">Eliminar</a>
+                                                </td>
+                                        </tr>
+                                        {% endfor %}
+                                </tbody>
+                        </table>
+                </div>
         </div>
 </div>
 {% endblock content %}
