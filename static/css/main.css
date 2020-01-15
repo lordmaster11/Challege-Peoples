@@ -21,12 +21,13 @@ table tr {
     text-align: center;
 }
 
-.form-group input{
+.form-group input {
     padding-left: 54px;
     border-radius: 5px;
 }
 
-.fa-user, .fa-envelope{
+.fa-user,
+.fa-envelope {
     position: absolute;
     left: 35px;
     font-size: 25px;
@@ -39,11 +40,17 @@ table tr {
     padding-right: 15px;
     white-space: pre-line;
     position: relative;
-    bottom: .08em; 
+    bottom: .08em;
 }
+
 .checkboxes input {
     vertical-align: middle;
 }
+
 .checkboxes label span {
     vertical-align: middle;
+}
+
+.container {
+    padding-top: 25px;
 }

@@ -8,27 +8,30 @@
                         <div class="form-group">
                                 <i class="fas fa-user"></i>
                                 <input type="text" name="first_name" placeholder="Nombre" value={{people['first_name']}}
-                                        class="form-control">
+                                        class="form-control" required>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-user"></i>
                                 <input type="text" name="last_name" placeholder="Apellido" value={{people['last_name']}}
-                                        class="form-control">
+                                        class="form-control" required>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-envelope"></i>
                                 <input type="text" name="email" placeholder="email" value={{people['email']}}
-                                        class="form-control">
+                                        class="form-control" required>
                         </div>
 
                         <p><b>Editar Curso</b></p>
-                                <div class="checkboxes">
-                                        <div>
-                                        <label for="x"><input type="checkbox" name="course" value={{people['courses']['id']}} id="x"><span>{{courses[0]['name']}}</span></label>
-                                        <label for="y"><input type="checkbox" name="course" value={{people['courses']['id']}} id="y"><span>{{courses[1]['name']}}</span></label>
-                                        <label for="z"><input type="checkbox" name="course" value={{people['courses']['id']}} id="z"><span>{{courses[2]['name']}}</span></label>
-                                        </div>
+                        <div class="checkboxes">
+                                <div>
+                                        <label for="x"><input type="checkbox" name="course" value={{courses[0]['id']}}
+                                                        id="x"><span>{{courses[0]['name']}}</span></label>
+                                        <label for="y"><input type="checkbox" name="course" value={{courses[1]['id']}}
+                                                        id="y"><span>{{courses[1]['name']}}</span></label>
+                                        <label for="z"><input type="checkbox" name="course" value={{courses[2]['id']}}
+                                                        id="z"><span>{{courses[2]['name']}}</span></label>
                                 </div>
+                        </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-info btn-block">Editar</button>
                         </div>
