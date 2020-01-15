@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     peoples = get_peoples()
     courses = get_courses()
-    return render_template('index.html', peoples=peoples, courses=courses)
+    return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))
 
 @app.route('/', methods= ['POST'])
 def add_people():
@@ -32,7 +32,7 @@ def add_people():
         peoples = get_peoples() 
         courses = get_courses()  
 
-    return render_template('index.html', peoples=peoples, courses=courses)
+    return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))
 
 @app.route('/delete/<id>')
 def delete(id):
@@ -40,14 +40,14 @@ def delete(id):
     peoples = get_peoples() 
     courses = get_courses()
 
-    return render_template('index.html', peoples=peoples, courses=courses)
+    return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))
 
 @app.route('/edit/<id>')    
 def get_student(id):
     people = get_people(id)
     courses = get_courses()
 
-    return render_template('edit.html', people=people, courses=courses)    
+    return render_template('edit.html', people=people, courses=courses, len_peoples=len(get_peoples()))    
 
 @app.route('/update/<id>', methods= ['POST'])
 def update_people(id):
@@ -69,7 +69,7 @@ def update_people(id):
         peoples = get_peoples() 
         courses = get_courses()
 
-    return render_template('index.html', peoples=peoples, courses=courses) 
+    return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples())) 
 
 if __name__ == '__main__':
         app.run(debug=True)

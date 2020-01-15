@@ -17,8 +17,11 @@ body {
     box-shadow: black;
 }
 
-table tr {
+table tr,
+td {
     text-align: center;
+    padding: 5px;
+    height: 50px;
 }
 
 .form-group input {
@@ -37,7 +40,7 @@ table tr {
 
 .checkboxes label {
     display: inline-block;
-    padding-right: 15px;
+    padding-right: 10px;
     white-space: pre-line;
     position: relative;
     bottom: .08em;
@@ -53,4 +56,20 @@ table tr {
 
 .container {
     padding-top: 25px;
+}
+
+.fa-search {
+    position: absolute;
+    left: 150px;
+    font-size: 25px;
+    padding-top: 6px;
+    opacity: 45%;
+}
+
+.btn-delete,
+.btn-edit {
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    text-shadow: 1px 1px 15px #666666;
 }

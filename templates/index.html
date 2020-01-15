@@ -26,14 +26,11 @@
                                 <div>
                                         <div class="checkboxes">
                                                 <label for="x"><input type="radio" name="course"
-                                                                value={{courses[0]['id']}} id="x"
-                                                                required><span>{{courses[0]['name']}}</span></label>
+                                                                value={{courses[0]['id']}} id="x" required><span> {{courses[0]['name']}}</span></label>
                                                 <label for="y"><input type="radio" name="course"
-                                                                value={{courses[1]['id']}} id="y"
-                                                                required><span>{{courses[1]['name']}}</span></label>
+                                                                value={{courses[1]['id']}} id="y" required><span> {{courses[1]['name']}}</span></label>
                                                 <label for="z"><input type="radio" name="course"
-                                                                value={{courses[2]['id']}} id="z"
-                                                                required><span>{{courses[2]['name']}}</span></label>
+                                                                value={{courses[2]['id']}} id="z" required><span> {{courses[2]['name']}}</span></label>
                                         </div>
                                 </div>
                                 <div class="form-group">
@@ -44,6 +41,17 @@
         </div>
 
         <div class="container">
+                <label class="control-label col-sm-12 text-right"><b>Cantidad de inscriptos: {{len_peoples}}</b></label>
+
+                <form role="form">
+                        <form class="form-inline">
+                                <div class="form-group">
+                                        <i class="fas fa-search"></i>
+                                        <input class="form-control" id="myInput" placeholder="Buscar Alumno">
+                                </div>
+                        </form>
+                </form>
+
                 <div class="table-responsive">
                         <table class="table table-hover table-bordered table table-striped table-dark">
                                 <thead>
@@ -52,16 +60,16 @@
                                         <td><b>Email</b></td>
                                         <td> </td>
                                 </thead>
-                                <tbody>
+                                <tbody id="myTable">
                                         {% for people in peoples %}
                                         <tr>
                                                 <td>{{people['first_name']}}</td>
                                                 <td>{{people['last_name']}}</td>
                                                 <td>{{people['email']}}</td>
                                                 <td>
-                                                        <div class="form-group text-center">
+                                                        <div class="form-group-btn text-center">
                                                                 <a href="/edit/{{people['id']}}"
-                                                                        class="btn btn-info">Editar</a>
+                                                                        class="btn btn-info btn-edit">Editar</a>
                                                                 <a href="/delete/{{people['id']}}"
                                                                         class="btn btn-danger btn-delete">Eliminar</a>
                                                                 <div>
