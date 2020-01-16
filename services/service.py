@@ -14,7 +14,6 @@ def get_json(url):
 def get_peoples():
     url = 'http://jdicostanzo.challenge.trinom.io/api/peoples'
     response = get_json(url)
-
     peoples = []
 
     for people in response['data']:
@@ -25,7 +24,6 @@ def get_peoples():
 def get_courses():
     url = 'http://jdicostanzo.challenge.trinom.io/api/courses'
     response = get_json(url)
-
     courses = []
 
     for course in response:
@@ -41,19 +39,16 @@ def get_people(id):
 
 def create_people(params):    
     url = 'http://jdicostanzo.challenge.trinom.io/api/peoples'
+
     response = requests.post(
             url=url, 
             headers={'Content-Type': 'application/json'},
             data=json.dumps(params),
         )
-
-    #if response.content:
-    #    print('Error al agregar el alumno')
     return response
 
 def delete_people(params):
     url = 'http://jdicostanzo.challenge.trinom.io/api/peoples/' + params
-
     response = requests.delete(url)
 
     return response
@@ -69,3 +64,9 @@ def edit_people(id, params):
 
     return response
 
+def people_exist(params):
+    res= False
+    for people in get_peoples():
+        if people['email'] == params:
+            res = True
+    return res      

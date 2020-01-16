@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 from services import*
-from services.service import create_people, get_peoples, get_people, delete_people, edit_people, get_courses
+from services.service import create_people, get_peoples, get_people, delete_people, edit_people, get_courses, people_exist
 
 app = Flask(__name__)
+app.secret_key = "mysecretkey"
 
 @app.route('/')
 def index():
@@ -12,7 +13,7 @@ def index():
     courses = get_courses()
     return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))
 
-@app.route('/', methods= ['POST'])
+@app.route('/', methods= ['GET','POST'])
 def add_people():
     if request.method == 'POST':
         first_name = request.form['first_name']
@@ -21,22 +22,26 @@ def add_people():
         course = request.form['course']
 
         data = {"first_name": first_name,"last_name": last_name,"email": email,"courses": [{"id": course}]}
+        
+        if not people_exist(email):
+            create_people(data)
+            flash('Alumno inscripto')
 
-        #course1 = request.form['course1']
-        #course2 = request.form['course2']
-        #course3 = request.form['course3']
+            peoples = get_peoples() 
+            courses = get_courses()   
+        else:
+            peoples = get_peoples() 
+            courses = get_courses()  
+            flash('El alumno ya existe')    
 
-        #data = {"first_name": first_name,"last_name": last_name,"email": email,"courses": [{"id": course1}, {"id": course2}, {"id": course3}]}
-
-        create_people(data)
-        peoples = get_peoples() 
-        courses = get_courses()  
-
-    return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))
+        return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples()))   
 
 @app.route('/delete/<id>')
 def delete(id):
     delete_people(id)
+
+    flash('Alumno eliminado')
+
     peoples = get_peoples() 
     courses = get_courses()
 
@@ -59,13 +64,10 @@ def update_people(id):
 
         data = {"first_name": first_name, "last_name": last_name, "email": email, "courses": [{"id": course}]}
 
-        #course1 = request.form['course1']
-        #course2 = request.form['course2']
-        #course3 = request.form['course3']
-
-        #data = {"first_name": first_name, "last_name": last_name, "email": email, "courses": [{"id": course1}, {"id": course2}, {"id": course3}]}
-        #data = {"first_name": first_name,"last_name": last_name,"email": email,"courses": []}
         edit_people(id, data)
+        
+        flash('Alumno actualizado')
+
         peoples = get_peoples() 
         courses = get_courses()
 
