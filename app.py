@@ -73,5 +73,25 @@ def update_people(id):
 
     return render_template('index.html', peoples=peoples, courses=courses, len_peoples=len(get_peoples())) 
 
+def course_people(id):
+    people = get_people(id)
+
+    for cour in people['courses']:
+        course = cour
+        print(cour, 'oursss')
+    return course    
+
+@app.route('/data/<id>')
+def data_people(id):
+    people = get_people(id)
+    peoples = get_peoples() 
+    courses = get_courses()
+    course = course_people(id)
+
+    #for course in people['courses']:
+     #   return course
+
+    return render_template('data.html', people=people, peoples=peoples, courses=courses, len_peoples=len(get_peoples()), course=course) 
+
 if __name__ == '__main__':
         app.run(debug=True)

@@ -24,12 +24,12 @@
                         <p><b>Editar Curso</b></p>
                         <div class="checkboxes">
                                 <div>
-                                        <label for="x"><input type="checkbox" name="course" value={{courses[0]['id']}}
-                                                        id="x"><span> {{courses[0]['name']}}</span></label>
-                                        <label for="y"><input type="checkbox" name="course" value={{courses[1]['id']}}
-                                                        id="y"><span> {{courses[1]['name']}}</span></label>
-                                        <label for="z"><input type="checkbox" name="course" value={{courses[2]['id']}}
-                                                        id="z"><span> {{courses[2]['name']}}</span></label>
+                                        <label for="x"><input type="radio" name="course" value={{courses[0]['id']}}
+                                                        id="x" required><span> {{courses[0]['name']}}</span></label>
+                                        <label for="y"><input type="radio" name="course" value={{courses[1]['id']}}
+                                                        id="y" required><span> {{courses[1]['name']}}</span></label>
+                                        <label for="z"><input type="radio" name="course" value={{courses[2]['id']}}
+                                                        id="z" required><span> {{courses[2]['name']}}</span></label>
                                 </div>
                         </div>
                         <div class="form-group">

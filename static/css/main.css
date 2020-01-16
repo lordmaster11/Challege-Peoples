@@ -15,6 +15,8 @@ body {
     background: linear-gradient(to top, #C4E0E5, #4CA1AF);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: black;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 table tr,
@@ -29,8 +31,7 @@ td {
     border-radius: 5px;
 }
 
-.fa-user,
-.fa-envelope {
+.fa-user, .fa-envelope, .fa-clock, .fa-info-circle, .fa-flag-usa {
     position: absolute;
     left: 35px;
     font-size: 25px;
@@ -72,4 +73,8 @@ td {
     -moz-border-radius: 4;
     border-radius: 4px;
     text-shadow: 1px 1px 15px #666666;
+}
+
+.container-body {
+    margin-top: 20px;
 }

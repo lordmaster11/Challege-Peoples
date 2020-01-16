@@ -25,11 +25,11 @@
                                 <p><b>Seleccionar Curso</b></p>
                                 <div>
                                         <div class="checkboxes">
-                                                <label for="x"><input type="checkbox" name="course"
+                                                <label for="x"><input type="radio" name="course"
                                                         value={{courses[0]['id']}} id="x" required><span> {{courses[0]['name']}}</span></label>
-                                                <label for="y"><input type="checkbox" name="course"
+                                                <label for="y"><input type="radio" name="course"
                                                         value={{courses[1]['id']}} id="y" required><span> {{courses[1]['name']}}</span></label>
-                                                <label for="z"><input type="checkbox" name="course"
+                                                <label for="z"><input type="radio" name="course"
                                                         value={{courses[2]['id']}} id="z" required><span> {{courses[2]['name']}}</span></label>
                                         </div>
                                 </div>
@@ -51,7 +51,7 @@
                 </div>
         </div>
 
-        <div class="container">
+        <div class="container-body">
                 <label class="control-label col-sm-12 text-right"><b>Cantidad de inscriptos: {{len_peoples}}</b></label>
 
                 <form role="form">
@@ -79,6 +79,8 @@
                                                 <td>{{people['email']}}</td>
                                                 <td>
                                                         <div class="form-group-btn text-center">
+                                                                <a href="/data/{{people['id']}}"
+                                                                        class="btn btn-success btn-datos">Datos</a>
                                                                 <a href="/edit/{{people['id']}}"
                                                                         class="btn btn-info btn-edit">Editar</a>
                                                                 <a href="/delete/{{people['id']}}"
