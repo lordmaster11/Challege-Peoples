@@ -31,7 +31,11 @@ td {
     border-radius: 5px;
 }
 
-.fa-user, .fa-envelope, .fa-clock, .fa-info-circle, .fa-flag-usa {
+.fa-user,
+.fa-envelope,
+.fa-clock,
+.fa-info-circle,
+.fa-flag-usa {
     position: absolute;
     left: 35px;
     font-size: 25px;
@@ -77,4 +81,21 @@ td {
 
 .container-body {
     margin-top: 20px;
+}
+
+.navbar-brand {
+    padding-left: 80px;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    font-size: 25px;
+    opacity: 45%;
+    color: white;
+}
+
+.btn {
+    opacity: 90%;
 }

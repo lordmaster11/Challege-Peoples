@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block content_nav %}
+        <a class="nav-brand" href="/"><i class="fas fa-arrow-left"></i></a>
+{% endblock content_nav %}
+
 {% block content %}
 <div class="col-md-4 offset-md-4">
         <div class="card card-body">
@@ -24,12 +28,30 @@
                         <p><b>Editar Curso</b></p>
                         <div class="checkboxes">
                                 <div>
+                                        {% if course['id'] == 1 %}
                                         <label for="x"><input type="radio" name="course" value={{courses[0]['id']}}
-                                                        id="x" required><span> {{courses[0]['name']}}</span></label>
+                                                id="x" checked><span> {{courses[0]['name']}}</span></label>
+                                        {% else %} 
+                                        <label for="x"><input type="radio" name="course" value={{courses[0]['id']}}
+                                                id="x"><span> {{courses[0]['name']}}</span></label>   
+                                        {% endif %}    
+                                           
+                                        {% if course['id'] == 2 %}         
                                         <label for="y"><input type="radio" name="course" value={{courses[1]['id']}}
-                                                        id="y" required><span> {{courses[1]['name']}}</span></label>
+                                                id="y" checked><span> {{courses[1]['name']}}</span></label>
+                                        {% else %}
+                                        <label for="y"><input type="radio" name="course" value={{courses[1]['id']}}
+                                                id="y"><span> {{courses[1]['name']}}</span></label>
+                                        {% endif %}
+
+                                        {% if course['id'] == 3 %}                
                                         <label for="z"><input type="radio" name="course" value={{courses[2]['id']}}
-                                                        id="z" required><span> {{courses[2]['name']}}</span></label>
+                                                id="z" checked><span> {{courses[2]['name']}}</span></label>
+                                        {% else %}
+                                        <label for="z"><input type="radio" name="course" value={{courses[2]['id']}}
+                                                id="z"><span> {{courses[2]['name']}}</span></label>        
+                                        {% endif %}
+
                                 </div>
                         </div>
                         <div class="form-group">

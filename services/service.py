@@ -45,6 +45,7 @@ def create_people(params):
             headers={'Content-Type': 'application/json'},
             data=json.dumps(params),
         )
+
     return response
 
 def delete_people(params):

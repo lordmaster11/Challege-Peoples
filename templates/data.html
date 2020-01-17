@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block content_nav %}
+        <a class="nav-brand" href="/"><i class="fas fa-arrow-left"></i></a>
+{% endblock content_nav %}
+
 {% block content %}
 <div class="col-md-4 offset-md-4">
         <div class="card card-body">
@@ -7,33 +11,27 @@
                 <form class="text-center">
                         <div class="form-group">
                                 <i class="fas fa-info-circle"></i>
-                                <input type="text" name="first_name" placeholder="ID" value={{people['id']}}
-                                        class="form-control" disabled>
+                                <input value={{people['id']}} class="form-control" disabled>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-user"></i>
-                                <input type="text" name="first_name" placeholder="Nombre" value={{people['first_name']}}
-                                        class="form-control" disabled>
+                                <input value={{people['first_name']}} class="form-control" disabled>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-user"></i>
-                                <input type="text" name="last_name" placeholder="Apellido" value={{people['last_name']}}
-                                        class="form-control" disabled>
+                                <input value={{people['last_name']}} class="form-control" disabled>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-clock"></i>
-                                <input type="text" name="email" placeholder="fecha" value={{people['created_at']}}
-                                        class="form-control" disabled>
+                                <input value={{people['created_at']}} class="form-control" disabled>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-envelope"></i>
-                                <input type="text" name="email" placeholder="email" value={{people['email']}}
-                                        class="form-control" disabled>
+                                <input value={{people['email']}} class="form-control" disabled>
                         </div>
                         <div class="form-group">
                                 <i class="fas fa-flag-usa"></i>
-                                <input type="text" name="email" placeholder="curso" value={{course['name']}}
-                                        class="form-control" disabled>
+                                <input value={{course['id']}} class="form-control" disabled>
                         </div>
                         <br>
                         <div class="form-group-btn text-center">
